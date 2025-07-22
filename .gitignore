@@ -5,5 +5,5 @@ package-lock.json
 
 /dist
 
-/android/DetonatorCamera/build/
-/ios/DetonatorCamera/.swiftpm/
+/android/DetonatorNotifier/build/
+/ios/DetonatorNotifier/.swiftpm/
