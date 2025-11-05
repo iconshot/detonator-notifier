@@ -43,9 +43,9 @@ class NotifierModule extends Emitter<NotifierModuleSignatures> {
       return true;
     }
 
-    return await Detonator.request({
-      name: "com.iconshot.detonator.notifier::checkPermission",
-    });
+    return await Detonator.request(
+      "com.iconshot.detonator.notifier::checkPermission"
+    ).fetchAndDecode();
   }
 
   public async requestPermission(): Promise<boolean> {
@@ -53,9 +53,9 @@ class NotifierModule extends Emitter<NotifierModuleSignatures> {
       return true;
     }
 
-    return await Detonator.request({
-      name: "com.iconshot.detonator.notifier::requestPermission",
-    });
+    return await Detonator.request(
+      "com.iconshot.detonator.notifier::requestPermission"
+    ).fetchAndDecode();
   }
 
   public async registerForRemoteMessages(): Promise<void> {
@@ -63,9 +63,9 @@ class NotifierModule extends Emitter<NotifierModuleSignatures> {
       return;
     }
 
-    await Detonator.request({
-      name: "com.iconshot.detonator.notifier::registerForRemoteMessages",
-    });
+    await Detonator.request(
+      "com.iconshot.detonator.notifier::registerForRemoteMessages"
+    ).fetch();
   }
 
   public useToken(): string | null {
@@ -113,10 +113,10 @@ class NotifierModule extends Emitter<NotifierModuleSignatures> {
       }
     }
 
-    await Detonator.request({
-      name: "com.iconshot.detonator.notifier::showNotification",
-      data: tmpData,
-    });
+    await Detonator.request(
+      "com.iconshot.detonator.notifier::showNotification",
+      tmpData
+    ).fetch();
   }
 
   public async createChannel(data: {
@@ -138,10 +138,10 @@ class NotifierModule extends Emitter<NotifierModuleSignatures> {
       return false;
     }
 
-    return await Detonator.request({
-      name: "com.iconshot.detonator.notifier::createChannel",
-      data,
-    });
+    return await Detonator.request(
+      "com.iconshot.detonator.notifier::createChannel",
+      data
+    ).fetchAndDecode();
   }
 
   public async createChannelGroup(data: {
@@ -153,10 +153,10 @@ class NotifierModule extends Emitter<NotifierModuleSignatures> {
       return false;
     }
 
-    return await Detonator.request({
-      name: "com.iconshot.detonator.notifier::createChannelGroup",
-      data,
-    });
+    return await Detonator.request(
+      "com.iconshot.detonator.notifier::createChannelGroup",
+      data
+    ).fetchAndDecode();
   }
 }
 
