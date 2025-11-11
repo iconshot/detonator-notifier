@@ -21,7 +21,7 @@ class NotifierModule extends Emitter<NotifierModuleSignatures> {
 
     Detonator.emitter.on(
       "com.iconshot.detonator.notifier.token",
-      (token: string) => {
+      (token: string): void => {
         this.token = token.length > 0 ? token : null;
 
         this.emit("token", this.token);
@@ -30,7 +30,7 @@ class NotifierModule extends Emitter<NotifierModuleSignatures> {
 
     Detonator.emitter.on(
       "com.iconshot.detonator.notifier.message",
-      (data: string) => {
+      (data: string): void => {
         const message: Message<any> = JSON.parse(data);
 
         this.emit("message", message);
