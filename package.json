@@ -1,12 +1,14 @@
 {
   "name": "@detonator/notifier",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Notication module for Detonator.",
   "repository": {
     "type": "git",
     "url": "https://github.com/iconshot/detonator-notifier.git"
   },
-  "main": "dist/index.js",
+  "type": "module",
+  "main": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "scripts": {
     "remove-dist": "rm -rf dist",
     "bundle-dist": "npm run remove-dist && tsc",
@@ -21,8 +23,8 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "detonator": "^1.10.0",
-    "untrue": "^5.16.2"
+    "detonator": "^1.11.0",
+    "untrue": "^5.18.0"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
